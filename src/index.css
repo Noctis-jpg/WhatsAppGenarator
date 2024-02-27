@@ -2,10 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-.ymForm{
+/* .ymForm{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+} */
+
+.MainForm_ym{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: auto;
+    max-width: 800px;
+    height: 100vh;
+    align-items: center;
+}
+.ymForm{
+    position: sticky;
+    top: 10px;
+    display: flex;
+
+    margin-right: 15px;
+
+    flex-direction: column;
+    width: 100%;
+}
+
+.result{
+    display: block;
+    width: 100%;
+    padding: 5px 0 5px 5px;
+    margin: 0;
+    color: #fbfbfb;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    height: 420px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.result code.html{
+    background: transparent;
+} 
+
+@media screen and (max-width:991px){
+
+    .MainForm_ym{    
+    flex-direction: column;
+    padding: 2rem;
+}
 }

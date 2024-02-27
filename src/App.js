@@ -11,10 +11,19 @@ function App() {
   
   const handleNumberChange = (e) => {
     setNumber(e.target.value);
-    console.log(number);
+
+
+
   }
   const handleTextChange = (e) => {
-    setText(e.target.value);
+    const newText = (e.target.value);
+
+    const WpText = newText.replace(/ /g, '%20');
+    console.log(WpText);
+
+
+    setText(WpText);
+
   }
   const handleIdChange = (e) => {
     setId(e.target.value);
@@ -52,7 +61,7 @@ function App() {
 <form className="max-w-xl mx-auto bg-slate-800	ymForm">
   <div className="mb-3">
     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone</label>
-    <input onChange={handleNumberChange} value={number} type="number" id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+9055555555" required />
+    <input onChange={handleNumberChange} value={number} type="tel" id="number" pattern="\+?\(?\d*\)?[0-9- ]+" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+9055555555" required />
   </div>
   <div className="mb-3">
     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default Text</label>
@@ -78,12 +87,13 @@ function App() {
   <div className="flex items-start mb-5">
   </div>
   </form>
-  <div className="flex items-start mb-5">
- 
-  <a href={`https://api.whatsapp.com/send?phone=${number}`} className={`whatsapp-button`} id={id} style={{position: 'fixed', zIndex: '1000', display: 'block', width:`${Size}px` , borderRadius: '50%', backgroundColor: '#25d366', color: '#fff', textAlign: 'center', fontSize: '30px', boxShadow: '2px 2px 3px #999', textDecoration: 'none',bottom:0}} target='_blank'> 
+  <div className="result background">
+  <code class="html hljs xml"></code>
+  </div>
+  <div className="flex items-start mb-5 ResultCode">
+  <a href={`https://api.whatsapp.com/send?phone=${number}&text=${text}`} className={`whatsapp-button`} id={id} style={{position: 'fixed', zIndex: '1000', display: 'block', width:`${Size}px` , borderRadius: '50%', backgroundColor: '#25d366', color: '#fff', textAlign: 'center', fontSize: '30px', boxShadow: '2px 2px 3px #999', textDecoration: 'none',bottom:0}} target='_blank'> 
   <img src={WhatsAppLogo} alt='WhatsApp ' />
   </a>
-
   </div>
   </div>
 
