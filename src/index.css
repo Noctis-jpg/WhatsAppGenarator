@@ -48,7 +48,33 @@
 }
 .result code.html{
     background: transparent;
-} 
+}
+.leftRight {
+    position: relative;
+}
+.block_ym{
+    margin-bottom: 1.5rem;
+}
+.leftRight .Left {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 50%;
+    height: 100%;
+font-size: 12px;
+    z-index: 1;
+    color: rgb(231, 131, 60);
+}
+.leftRight .Right {
+    position: absolute;
+    right: -150px;
+    top: 20px;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+    font-size: 12px;
+    color: rgb(231, 131, 60);
+}
 
 @media screen and (max-width:991px){
 

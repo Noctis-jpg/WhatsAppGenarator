@@ -2,24 +2,17 @@ import React, { useState, useEffect } from "react";
 import WhatsAppLogo from "../src/assets/images/wp.svg";
 
 function App() {
+  
   const [number, setNumber] = useState(0);
   const [text, setText] = useState("");
   const [id, setId] = useState("");
   const [Size, setSize] = useState(100);
   const [LeftOrRight, setLeftOrRight] = useState(100);
   const [TopOrBottom, setTopOrBottom] = useState(0);
-  
-  useEffect(() => {
-    const whatsappButton = document.querySelector('.whatsapp-button');
-    const resultCode = document.querySelector('.ResultCode');
-  
+  const whatsappButton = document.querySelector('.whatsapp-button');
+  const resultCode = document.querySelector('.ResultCode');
 
-    resultCode.appendChild(whatsappButton);
-  
-    console.log(resultCode);
-    
-  }, []);
-  
+
 
 
 
@@ -44,17 +37,18 @@ function App() {
 
   const handleLeftOrRightChange = (e) => {
     const newValue = parseInt(e.target.value);
-    const leftValue = newValue - 100;
+    const rightValue = newValue - 100;
     const newStyle =
       newValue >= 0 && newValue <= 100
-        ? { left: "", right: `${newValue}px` }
-        : { right: "", left: `${leftValue}px` };
+        ? { right: "", left: `${newValue}px` }
+        : { left: "", right: `${rightValue}px` };
     const whatsappButton = document.querySelector(".whatsapp-button");
     if (whatsappButton) {
       Object.assign(whatsappButton.style, newStyle);
     }
     setLeftOrRight(newValue);
-  };  
+};
+
 
   const handleBottomPointChange = (e) => {
     const newValueTopOrBottom = parseInt(e.target.value);
@@ -132,9 +126,13 @@ function App() {
           />
         </div>
         <div className="mb-3">
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block_ym block mb-2 text-sm font-medium text-gray-900 dark:text-white leftRight">
             Button Position
+            <span className="Right">Right</span>
+            <span className="Left">Left</span>
+
           </label>
+
           <input
             onChange={handleLeftOrRightChange}
             value={LeftOrRight}
@@ -148,8 +146,10 @@ function App() {
           />
         </div>
         <div className="mb-3">
-          <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+          <label className="block_ym block mb-2 text-sm font-medium text-gray-900 dark:text-white leftRight">
             Button Position
+            <span className="Right">Top</span>
+            <span className="Left">Bottom</span>
           </label>
           <input
             onChange={handleBottomPointChange}
