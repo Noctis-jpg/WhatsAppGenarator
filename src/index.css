@@ -43,8 +43,25 @@
     white-space: pre-wrap;
     word-break: break-all;
     height: 420px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    display: block;
+    overflow-x: auto;
+}
+.flex_ym{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+}
+.flex_ym{
+    font-size: 35px;
+    color: white;
+    margin:20px 0;
+    color: rgb(231, 131, 60);
+
+}
+.ResultCode{
+    white-space: pre-wrap;    
 }
 .result code.html{
     background: transparent;
@@ -81,5 +98,7 @@ font-size: 12px;
     .MainForm_ym{    
     flex-direction: column;
     padding: 2rem;
+    height: auto;
+    overflow-y: hidden !important;
 }
 }
