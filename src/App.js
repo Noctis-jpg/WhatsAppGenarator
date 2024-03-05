@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import WhatsAppLogo from "../src/assets/images/wp.svg";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 function App() {
   
   const [number, setNumber] = useState(0);
+  const [countryCode, setCountryCode] = useState('TR');
   const [text, setText] = useState("");
   const [id, setId] = useState("");
   const [Size, setSize] = useState(100);
@@ -25,10 +27,16 @@ function App() {
 
 
 
-
-  const handleNumberChange = (e) => {
-    setNumber(e.target.value);
+  const handleNumberChange = (value, country) => {
+    if (value) {
+      setNumber(value);
+    }
+    if (country) {
+      setCountryCode(country);
+    }
   };
+  
+
   const handleTextChange = (e) => {
     const newText = e.target.value;
 
@@ -37,6 +45,7 @@ function App() {
 
     setText(WpText);
   };
+
   const handleIdChange = (e) => {
     setId(e.target.value);
   };
@@ -81,9 +90,10 @@ function App() {
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Phone
           </label>
-          <input
-            onChange={handleNumberChange}
-            value={number}
+          <PhoneInput
+      country={countryCode}
+      onChange={(value, country) => handleNumberChange(value, country)}
+      value={number}
             type="tel"
             id="number"
             pattern="\+?\(?\d*\)?[0-9- ]+"
