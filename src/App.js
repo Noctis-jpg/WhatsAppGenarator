@@ -31,8 +31,9 @@ function App() {
     if (value) {
       setNumber(value);
     }
+  
     if (country) {
-      setCountryCode(country);
+      setCountryCode(country.code);
     }
   };
   
@@ -91,7 +92,8 @@ function App() {
             Phone
           </label>
           <PhoneInput
-      country={countryCode}
+      defaultCountry="tr"
+      country={'tr'}
       onChange={(value, country) => handleNumberChange(value, country)}
       value={number}
             type="tel"

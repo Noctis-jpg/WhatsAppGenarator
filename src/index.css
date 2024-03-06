@@ -92,7 +92,33 @@ font-size: 12px;
     font-size: 12px;
     color: rgb(231, 131, 60);
 }
-
+.flag-dropdown {
+    height: 35px !important;
+    top: 10px !important;
+}
+.react-tel-input .country-list .country-name{
+    color: black;
+}
+.form-control {
+    color: white;
+    background: #374151 !important;
+    border: none !important;
+}
+.react-tel-input .selected-flag .arrow{
+    border-left: 5px solid transparent !important;
+    border-right: 5px solid transparent !important;
+    border-top: 6px solid #fff0f0 !important;
+}
+.react-tel-input .flag-dropdown{
+    background: #374151 !important; 
+    border: none !important; 
+ }
+ .react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus{
+    background: transparent !important;
+ }
+ .react-tel-input .flag-dropdown.open .selected-flag{
+    background: transparent !important;
+ }
 @media screen and (max-width:991px){
 
     .MainForm_ym{    
